@@ -1,0 +1,3 @@
+[submodule "Marble/vendor/spdlog"]
+	path = Marble/vendor/spdlog
+	url = https://github.com/gabime/spdlog
