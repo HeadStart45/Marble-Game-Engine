@@ -26,7 +26,7 @@ project "Marble"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include;"
+		"%{prj.name}/vendor/spdlog/include"
 	}
 
 	filter "system:windows"
@@ -72,7 +72,7 @@ project "Sandbox"
 
 	includedirs
 	{
-		"Marble/vendor/spdlog/include;",
+		"Marble/vendor/spdlog/include",
 		"Marble/src"
 	}
 

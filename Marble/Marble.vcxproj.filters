@@ -4,6 +4,9 @@
     <Filter Include="Marble">
       <UniqueIdentifier>{78B897C2-645A-C298-4D15-D6EC395649E9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Marble\Events">
+      <UniqueIdentifier>{5C2D0AEE-C8ED-8524-9128-CFA1FDA7CA00}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Marble.h" />
@@ -15,6 +18,9 @@
     </ClInclude>
     <ClInclude Include="src\Marble\EntryPoint.h">
       <Filter>Marble</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Marble\Events\Event.h">
+      <Filter>Marble\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Marble\Log.h">
       <Filter>Marble</Filter>
