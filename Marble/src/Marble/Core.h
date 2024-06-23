@@ -1,5 +1,5 @@
 #pragma once
-
+//Define macros for exporting or importing DLL functions
 #ifdef MB_PLATFORM_WINDOWS
 	#ifdef MB_BUILD_DLL
 		#define MARBLE_API __declspec(dllexport) //IN ENGINE

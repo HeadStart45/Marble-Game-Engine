@@ -25,6 +25,9 @@
     <ClInclude Include="src\Marble\Log.h">
       <Filter>Marble</Filter>
     </ClInclude>
+    <ClInclude Include="src\Marble\Events\KeyEvent.h" />
+    <ClInclude Include="src\Marble\Events\MouseEvent.h" />
+    <ClInclude Include="src\Marble\Events\ApplicationEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Marble\Application.cpp">
