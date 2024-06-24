@@ -20,6 +20,7 @@ namespace Marble
 		{
 			std::stringstream stream;
 			stream << "MouseMovedEvent: (" << m_mousePosX << ", " << m_mousePosY << ")";
+			return stream.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseMoved)
@@ -43,6 +44,7 @@ namespace Marble
 		{
 			std::stringstream stream;
 			stream << "MouseScrolledEvent: X => " << m_xOffset << " Y => " << m_yOffset;
+			return stream.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseScrolled)
@@ -78,6 +80,7 @@ namespace Marble
 		{
 			std::stringstream stream;
 			stream << "MouseButtonPressed: " << m_button;
+			return stream.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseButtonPressed)
@@ -95,6 +98,7 @@ namespace Marble
 		{
 			std::stringstream stream;
 			stream << "MouseButtonReleased: " << m_button;
+			return stream.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseButtonReleased)

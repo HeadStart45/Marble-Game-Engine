@@ -1,9 +1,7 @@
 #pragma once
 
-#include "../Core.h"
+#include "Marble/Core.h"
 
-#include <string>
-#include <functional>
 
 namespace Marble
 {
@@ -13,7 +11,7 @@ namespace Marble
 	enum class EventType
 	{
 		None = 0, 
-		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
+		WindowClose, WindowResized, WindowFocus, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
 		KeyPressed, KeyReleased,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
@@ -28,13 +26,13 @@ namespace Marble
 		EventCategoryMouse = BIT(3),
 		EventCategoryMouseButton = BIT(4),
 	};
-
+///Class and Category macros make setting type and category enums more streamlined
 #define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\
 								virtual EventType GetEventType() const override { return GetStaticType(); }\
 								virtual const char* GetName() const override { return #type; }
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
-
+	//Event base class, inherited by all event types
 	class MARBLE_API Event
 	{
 		friend class EventDispatcher;
@@ -73,5 +71,12 @@ namespace Marble
 	private:
 		Event& m_event;
 	};
+
+	
+	inline std::ostream& operator<<(std::ostream& os, const Event& e)
+	{
+		return os << e.ToString();
+	}
+
 
 }

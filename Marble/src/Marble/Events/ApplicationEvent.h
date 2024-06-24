@@ -1,20 +1,30 @@
 #pragma once
-#include "Event.h"
-
-#include <sstream>
+#include "Marble/Events/Event.h"
 
 namespace Marble
 {
 	class MARBLE_API WindowResizedEvent : public Event
 	{
 	public:
-		WindowResizedEvent(float width, float height) : m_width(width), m_height(height) {}
+		WindowResizedEvent(unsigned int width, unsigned int height) : m_width(width), m_height(height) {}
 
-		inline float GetHeight() { return m_height; }
-		inline float GetWidth() { return m_width; }
+		inline unsigned int GetHeight() { return m_height; }
+		inline unsigned int GetWidth() { return m_width; }
+
+		std::string ToString() const override
+		{
+			std::stringstream stream;
+			stream << "WindowResizedEvent: Width => " << m_width << " Height => " << m_height;
+			return stream.str();
+		}
+
+		EVENT_CLASS_TYPE(WindowResized)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+
+
 	private:
-		float m_width;
-		float m_height;
+		unsigned int m_width;
+		unsigned int m_height;
 	};
 
 
@@ -42,7 +52,7 @@ namespace Marble
 		AppUpdateEvent() {}
 
 		EVENT_CLASS_TYPE(AppUpdate)
-			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
 	class MARBLE_API AppRenderEvent : public Event
@@ -51,7 +61,7 @@ namespace Marble
 		AppRenderEvent() {}
 
 		EVENT_CLASS_TYPE(AppRender)
-			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
 

@@ -2,6 +2,7 @@
 
 #include "Core.h"
 
+
 namespace Marble
 {
 	class MARBLE_API Application

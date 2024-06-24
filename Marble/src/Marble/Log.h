@@ -1,10 +1,13 @@
 #pragma once
-
-#include <memory>
+#include "mbpch.h"
 
 #include "Core.h"
-#include "spdlog/spdlog.h"
-#include "spdlog/sinks/stdout_color_sinks.h"
+#include <spdlog/spdlog.h>
+#include <spdlog/fmt/ostr.h>
+
+
+
+
 /// <summary>
 /// Static logging interface.
 /// Abstracts spd logging library for simpler logging in engine
@@ -24,6 +27,8 @@ namespace Marble
 
 
 	};
+
+	
 }
 
 ///CORE MACRO LOG FUNCTIONS///
