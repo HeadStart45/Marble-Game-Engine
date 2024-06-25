@@ -10,6 +10,11 @@ workspace "Marble"
 
 
 outputDir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+IncludeDir = {}
+IncludeDir["GLFW"] = "Marble/vendor/GLFW/include"
+include "Marble/vendor/GLFW"
+
 project "Marble"
 	location "Marble"
 	kind "SharedLib"
@@ -30,7 +35,14 @@ project "Marble"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -50,7 +62,11 @@ project "Marble"
 		}
 
 	filter "configurations:Debug"
-		defines "MB_DEBUG"
+		defines
+		{
+			"MB_DEBUG",
+			"MB_ENABLE_ASSERTS"
+		} 
 		symbols "On"
 
 	filter "configurations:Release"
@@ -96,7 +112,11 @@ project "Sandbox"
 		}
 
 	filter "configurations:Debug"
-		defines "MB_DEBUG"
+		defines
+		{
+			"MB_DEBUG",
+			"MB_ENABLE_ASSERTS"
+		} 
 		symbols "On"
 
 	filter "configurations:Release"

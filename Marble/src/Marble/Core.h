@@ -12,4 +12,14 @@
 
 #endif
 
+#ifdef MB_ENABLE_ASSERTS
+	#define MB_ASSERT(x, ...) { if(!(x)) { MB_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define MB_CORE_ASSERT(x, ...) { if(!(x)) { MB_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define MB_ASSERT(x, ...)
+	#define MB_CORE_ASSERT(x, ...)
+
+#endif
+
+
 #define BIT(x) (1 << x)

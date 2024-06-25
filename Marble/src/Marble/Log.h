@@ -1,6 +1,4 @@
 #pragma once
-#include "mbpch.h"
-
 #include "Core.h"
 #include <spdlog/spdlog.h>
 #include <spdlog/fmt/ostr.h>
@@ -37,6 +35,8 @@ namespace Marble
 #define MB_CORE_LOG(...) ::Marble::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define MB_CORE_TRACE(...) ::Marble::Log::GetCoreLogger()->trace(__VA_ARGS__)
 #define MB_CORE_FATAL(...) ::Marble::Log::GetCoreLogger()->fatal(__VA_ARGS__)
+
+
 
 //CLIENT MACRO LOG FUNCTIONS//
 #define MB_ERROR(...) ::Marble::Log::GetClientLogger()->error(__VA_ARGS__)
