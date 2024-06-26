@@ -1,7 +1,7 @@
 # Marble-Game-Engine
 A C++ 2D Game Engine using OpenGL
 
-Marble is currently in development, and not currently intended for use. 
+Marble is currently in development, and not intended for use. 
 
 This repo is public for portfolio purposes.
 
