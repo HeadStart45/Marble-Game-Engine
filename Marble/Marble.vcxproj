@@ -161,12 +161,14 @@
     <ClInclude Include="src\Marble\Events\KeyEvent.h" />
     <ClInclude Include="src\Marble\Events\MouseEvent.h" />
     <ClInclude Include="src\Marble\Log.h" />
+    <ClInclude Include="src\Marble\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Marble\Window.h" />
     <ClInclude Include="src\mbpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Marble\Application.cpp" />
     <ClCompile Include="src\Marble\Log.cpp" />
+    <ClCompile Include="src\Marble\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\mbpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

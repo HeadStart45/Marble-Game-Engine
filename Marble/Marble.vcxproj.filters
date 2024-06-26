@@ -7,6 +7,12 @@
     <Filter Include="Marble\Events">
       <UniqueIdentifier>{5C2D0AEE-C8ED-8524-9128-CFA1FDA7CA00}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Marble\Platform">
+      <UniqueIdentifier>{CCFB68B5-3887-D679-4198-596EADA2327A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Marble\Platform\Windows">
+      <UniqueIdentifier>{06B26BF9-72E9-B390-7BF3-17B4E7A9DA89}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Marble.h" />
@@ -34,6 +40,9 @@
     <ClInclude Include="src\Marble\Log.h">
       <Filter>Marble</Filter>
     </ClInclude>
+    <ClInclude Include="src\Marble\Platform\Windows\WindowsWindow.h">
+      <Filter>Marble\Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Marble\Window.h">
       <Filter>Marble</Filter>
     </ClInclude>
@@ -45,6 +54,9 @@
     </ClCompile>
     <ClCompile Include="src\Marble\Log.cpp">
       <Filter>Marble</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Marble\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Marble\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\mbpch.cpp" />
   </ItemGroup>
