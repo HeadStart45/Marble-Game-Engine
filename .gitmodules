@@ -4,3 +4,6 @@
 [submodule "Marble/vendor/GLFW"]
 	path = Marble/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "Marble/vendor/imgui"]
+	path = Marble/vendor/imgui
+	url = https://github.com/TheCherno/imgui

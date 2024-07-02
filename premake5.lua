@@ -13,7 +13,11 @@ outputDir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Marble/vendor/GLFW/include"
+IncludeDir["Glad"] = "Marble/vendor/Glad/include"
+IncludeDir["Imgui"] = "Marble/vendor/imgui/include"
 include "Marble/vendor/GLFW"
+include "Marble/vendor/Glad"
+include "Marble/vendor/imgui"
 
 project "Marble"
 	location "Marble"
@@ -36,13 +40,17 @@ project "Marble"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.Imgui}"
 	}
 
 	links
 	{
 		"GLFW",
-		"opengl32.lib"
+		"Glad",
+		"Imgui",
+		"opengl32.lib",
 	}
 
 	filter "system:windows"
@@ -53,7 +61,8 @@ project "Marble"
 		defines
 		{
 			"MB_BUILD_DLL",
-			"MB_PLATFORM_WINDOWS"
+			"MB_PLATFORM_WINDOWS",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -66,15 +75,18 @@ project "Marble"
 		{
 			"MB_DEBUG",
 			"MB_ENABLE_ASSERTS"
-		} 
+		}
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "MB_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "MB_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -117,12 +129,15 @@ project "Sandbox"
 			"MB_DEBUG",
 			"MB_ENABLE_ASSERTS"
 		} 
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "MB_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "MB_DIST"
+		buildoptions "/MD"
 		optimize "On"

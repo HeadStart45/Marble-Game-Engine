@@ -37,6 +37,12 @@
     <ClInclude Include="src\Marble\Events\MouseEvent.h">
       <Filter>Marble\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Marble\Layer.h">
+      <Filter>Marble</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Marble\LayerStack.h">
+      <Filter>Marble</Filter>
+    </ClInclude>
     <ClInclude Include="src\Marble\Log.h">
       <Filter>Marble</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Marble\Application.cpp">
+      <Filter>Marble</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Marble\Layer.cpp">
+      <Filter>Marble</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Marble\LayerStack.cpp">
       <Filter>Marble</Filter>
     </ClCompile>
     <ClCompile Include="src\Marble\Log.cpp">
